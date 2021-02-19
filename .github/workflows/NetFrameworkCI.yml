@@ -33,12 +33,12 @@ jobs:
     
     - name: Build the Solution
       run: msbuild GithubActionsExample/GithubActionsExample.sln /p:outdir=".\outproject\\" /p:Configuration=Release
-
+        
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: ./
       with:
         name: created-artifact
-        path: .\outproject\\
+        path: outproject
         
     - name: Download artifact 
       uses: actions/download-artifact@v2
