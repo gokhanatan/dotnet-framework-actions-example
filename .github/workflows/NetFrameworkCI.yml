@@ -35,10 +35,9 @@ jobs:
       run: msbuild GithubActionsExample/GithubActionsExample.sln /p:outdir=".\outproject\\" /p:Configuration=Release
         
     - name: Upload artifact
-      uses: ./
+      uses: actions/upload-artifact@v2
       with:
         name: created-artifact
-        path: outproject
         
     - name: Download artifact 
       uses: actions/download-artifact@v2
