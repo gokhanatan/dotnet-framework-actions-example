@@ -38,6 +38,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: created-artifact
+        path: D:\a\dotnet-framework-actions-example\dotnet-framework-actions-example\GithubActionsExample\Example.API\outproject
         
     - name: Download artifact 
       uses: actions/download-artifact@v2
