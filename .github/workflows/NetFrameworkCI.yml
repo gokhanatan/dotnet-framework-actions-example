@@ -32,4 +32,15 @@ jobs:
       run: nuget restore GithubActionsExample/GithubActionsExample.sln
     
     - name: Build the Solution
-      run: msbuild GithubActionsExample/GithubActionsExample.sln /p:outdir=".\outproject\\" /p:Configuration=Release
+      run: msbuild GithubActionsExample/GithubActionsExample.sln /p:Configuration=Release
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: CreatedArtifact
+        path: my-created-artifact.txt
+        
+    - name: Download artifact 
+      uses: actions/download-artifact@v2
+      with:
+        name: CreatedArtifact
