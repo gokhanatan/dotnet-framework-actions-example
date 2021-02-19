@@ -32,4 +32,4 @@ jobs:
       run: nuget restore GithubActionsExample.sln
     
     - name: Build the Solution
-      run: msbuild GithubActionsExample.sln /p:Configuration=Release
+      run: msbuild GithubActionsExample.sln
