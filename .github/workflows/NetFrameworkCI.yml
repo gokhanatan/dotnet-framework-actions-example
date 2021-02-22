@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: created-artifact
-        path: ${{ GITHUB_WORKSPACE }}\Example.API\outproject
+        path: $[GITHUB_WORKSPACE]\Example.API\outproject
         
     - name: Download artifact 
       uses: actions/download-artifact@v2
