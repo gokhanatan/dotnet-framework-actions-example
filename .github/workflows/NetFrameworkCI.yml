@@ -28,9 +28,6 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
     
-    - name: Restore NuGet packages
-      run: nuget restore GithubActionsExample/GithubActionsExample.sln
-    
     - name: Build the Solution
       run: msbuild GithubActionsExample/GithubActionsExample.sln /p:outdir=".\outproject\\" /p:Configuration=Release
         
