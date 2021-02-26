@@ -29,8 +29,8 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
       
     - name: deployment
-      run: |
-          ./deploy.ps1
+      run: .\deploy.ps1
+      shell: powershell
           
     - name: Restore NuGet packages
       run: nuget restore GithubActionsExample/GithubActionsExample.sln
