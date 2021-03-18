@@ -40,7 +40,7 @@ jobs:
         
     - name: deploymentReal
       run: |
-          $Files = "C:\actions-runner\ws\dotnet-framework-actions-example\dotnet-framework-actions-example\_PublishedWebsites\Example.API"
+          $Files = "C:\actions-runner\ws\dotnet-framework-actions-example\dotnet-framework-actions-example\GithubActionsExample\Example.API\outproject\_PublishedWebsites\Example.API"
           $Destination = "C:\deploy_example"
           copy-item -Path (Get-Item -Path "$Files").FullName -Include * -Destination "$Destination" -Force -Recurse
     
