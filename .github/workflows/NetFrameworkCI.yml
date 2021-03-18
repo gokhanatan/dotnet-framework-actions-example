@@ -38,6 +38,12 @@ jobs:
     - name: Build the Solution
       run: msbuild GithubActionsExample/GithubActionsExample.sln /p:outdir=".\outproject\\" /p:Configuration=Release
         
+    - name: deploymentReal
+      run: |
+          $Files = "C:\actions-runner\ws\dotnet-framework-actions-example\dotnet-framework-actions-example\_PublishedWebsites\Example.API"
+          $Destination = "C:\deploy_example"
+          copy-item -Path (Get-Item -Path "$Files").FullName -Include * -Destination "$Destination" -Force -Recurse
+    
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
