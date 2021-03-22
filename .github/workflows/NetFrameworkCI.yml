@@ -28,19 +28,17 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
       
-    - name: deployment
-      run: |
-          ${{ github.workspace }}/.github/workflows/deploy.ps1
-          
+
     - name: Restore NuGet packages
       run: nuget restore GithubActionsExample/GithubActionsExample.sln
       
     - name: Build the Solution
       run: msbuild GithubActionsExample/GithubActionsExample.sln /p:outdir=".\outproject\\" /p:Configuration=Release
         
-    - name: deploymentReal
+    - name: deployment
       run: |
-        ./deploy.ps1
+          ${{ github.workspace }}/.github/workflows/deploy.ps1
+          
     
     - name: Upload artifact
       uses: actions/upload-artifact@v2
