@@ -2,3 +2,4 @@ $Files = "c:\runner\_\dotnet-framework-actions-example\dotnet-framework-actions-
 $Destination = "\\ZPMULWVCMSTG\c$\AppHosts\runnerApp"
 copy-item -Path (Get-Item -Path "$Files").FullName -Include * -Destination "$Destination" -Force -Recurse
 
+
